@@ -87,11 +87,7 @@ p {
   grid-row: 4/5;
 
   display: flex;
-  justify-content: center;
-  align-items: center;
-
   border: 1.5px solid black;
-  text-align: center;
   border-radius: 10px;
 }
 
@@ -101,6 +97,7 @@ img {
 
 button {
   background: transparent;
+  /* it means no border */
   border: 0;
 }
 
