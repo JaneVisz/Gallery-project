@@ -64,6 +64,16 @@ for (let i = 0; i < content.length; i++) {
   };
 }
 
+// FUNCTION - to print the main picture
+function showPicture(index) {
+  mainPicture.setAttribute("src", content[index].src);
+  let urlPicture = mainPicture.getAttribute("src");
+  makeBorder(urlPicture);
+  namePlace.innerText = content[index].name;
+  nameLocation.innerText = content[index].location;
+  text.innerText = content[index].text;
+}
+
 // FUNCTION - creating significant border
 function makeBorder(urlPicture) {
   content.forEach((picture, index) => {
@@ -75,17 +85,7 @@ function makeBorder(urlPicture) {
   });
 }
 
-// FUNCTION - to print the main picture
-function showPicture(index) {
-  mainPicture.setAttribute("src", content[index].src);
-  let urlPicture = mainPicture.getAttribute("src");
-  makeBorder(urlPicture);
-  namePlace.innerText = content[index].name;
-  nameLocation.innerText = content[index].location;
-  text.innerText = content[index].text;
-}
-
-// button right
+// button RIGHT
 btnRight.onclick = () => {
   showPicture(index);
 
@@ -97,7 +97,7 @@ btnRight.onclick = () => {
   console.log(index);
 };
 
-// button left
+// button LEFT
 btnLeft.onclick = () => {
   showPicture(index);
 
@@ -109,12 +109,12 @@ btnLeft.onclick = () => {
   console.log(index);
 };
 
-// button play
+// button PLAY
 btnAuto.onclick = () => {
   let interval = setInterval(() => {
     showPicture(index);
-
     index++;
+
     if (index == content.length) {
       index = 0;
       clearInterval(interval);
